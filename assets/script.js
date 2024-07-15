@@ -12,8 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function fetchWeatherData(cityName) {
-    const geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=${apiKey}`;
-    
+    const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=b2704ead6b96bc0c2d0096d8d6b56bfb`;
     
     fetch(geoUrl)
         .then(response => response.json())
@@ -29,7 +28,7 @@ function fetchWeatherData(cityName) {
 
 function getForecast(lat, lon, cityName) {
     // Added &units=metric to request temperature in Celsius
-     const geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=1&appid=b2704ead6b96bc0c2d0096d8d6b56bfb`;
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     
     fetch(forecastUrl)
         .then(response => response.json())
